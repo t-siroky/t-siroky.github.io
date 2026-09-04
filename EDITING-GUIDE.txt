@@ -1,0 +1,118 @@
+PORTFOLIO EDITING GUIDE
+=======================
+
+This site is intentionally plain HTML + CSS so it stays easy to change later.
+You do NOT need a site builder or framework to edit the wording.
+
+MAIN FILES
+----------
+index.html
+  Homepage copy and project cards.
+
+projects-induction-soldering.html
+  Full induction soldering case study.
+
+projects-ace.html
+  Full Automated Court Enhancer (ACE) case study.
+  The main editable copy blocks are marked with comments such as:
+      <!-- EDITABLE COPY: ACE HERO -->
+      <!-- EDITABLE COPY: ACE SECTION 1 -->
+
+styles.css
+  Site-wide colors, spacing, type, image layout, mobile behavior, etc.
+
+HOW TO CHANGE TEXT
+------------------
+1. Make a backup copy of the site folder.
+2. Open the relevant .html file in VS Code, Notepad++, or another text editor.
+3. Use Ctrl+F to find the sentence or heading exactly as it appears on the website.
+4. Edit only the text between HTML tags.
+
+Example:
+    <h2>The final robot was not perfect, but the core cleaning idea worked.</h2>
+
+You can change the sentence without changing <h2> or </h2>.
+
+HOW TO CHANGE AN IMAGE
+----------------------
+1. Put the new image in the appropriate folder under public/images/.
+2. Find the <img ... src="..."> line in the relevant HTML file.
+3. Replace only the file path inside src="...".
+
+ACE IMAGE FOLDER
+----------------
+public/images/ace/
+  ace-team.jpg              main ACE team/hero photo
+  ace-cad.jpg               clean ACE CAD view
+  ace-chassis.jpg           bare steel chassis
+  ace-build-layout.jpg      build/assembly photo
+  ace-electronics-bench.jpg electronics development
+  ace-pad-underside.jpg     cleaning pad underneath robot
+  ace-pad-motor-clamp.jpg   motor clamp detail
+  ace-dirty-microfiber.jpg  cleaning-result evidence
+  ace-final-top.jpg         final robot overview
+
+ACE VIDEO
+---------
+public/videos/ace/ace-final-demo.mp4
+
+DEPLOYMENT NOTE
+---------------
+When the site is eventually deployed, keep the unminified HTML/CSS files in the repository.
+That way future wording changes remain a simple text edit + redeploy.
+
+PUMP PAGE
+---------
+projects-pump.html
+  External Gear Pump Reverse Engineering case study.
+  Editable copy blocks are marked with comments such as:
+      <!-- EDITABLE COPY: PUMP HERO -->
+      <!-- EDITABLE COPY: PUMP REDESIGN -->
+
+PUMP IMAGE FOLDER
+-----------------
+public/images/pump/
+  pump-final.jpg             final assembled printed pump / homepage card
+  pump-final-open.jpg        final two-gear chamber
+  pump-gear-comparison.jpg   redesigned green gears vs original black gears
+  pump-green-prototype.jpg   early printed prototype
+  pump-original-housing.jpg  original molded pump housing
+  pump-faro-scan.jpg         cropped FARO scan visual from class presentation
+  pump-housing-cad.jpg       cropped housing CAD visual from class presentation
+
+
+RESUME & RECOMMENDATION
+-----------------------
+public/docs/Thomas-Siroky-Resume.pdf
+  Current resume linked from the homepage hero and Resume & Recommendation section.
+
+public/docs/Guillermo-Rodriguez-Recommendation.pdf
+  Signed Opto 22 recommendation letter linked from the homepage and induction case study.
+
+public/images/documents/resume-preview.jpg
+public/images/documents/recommendation-preview.jpg
+  Homepage preview images generated from the PDFs. If either PDF changes later,
+  replace the PDF and regenerate/replace the matching preview image.
+
+HOMEPAGE DOCUMENT COPY
+----------------------
+The Resume & Recommendation section is near the bottom of index.html under:
+    <section id="resume" ...>
+
+The recommendation description is plain HTML text and can be changed independently
+from the signed PDF.
+
+SITE SCALE / RESPONSIVE SIZING
+------------------------------
+The final sizing adjustments are grouped at the bottom of styles.css under:
+    /* v0.21 compact responsive scale pass */
+
+That block intentionally overrides earlier values without removing the older design history.
+Key controls there include the homepage h1/h2 sizes, hero image height, section spacing,
+case-study image sizes, and the tablet/mobile media queries.
+
+
+ABOUT ME PHOTO
+--------------
+public/images/profile/about-me.jpg
+  Photo used in the homepage About Me section.
