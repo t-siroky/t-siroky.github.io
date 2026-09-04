@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case study: reverse engineering and redesign of a small external gear water pump using SolidWorks, Fusion 360, metrology, and 3D printing." />
+  <link rel="stylesheet" href="styles.css" />
+  <title>External Gear Pump Reverse Engineering</title>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav"><a class="brand" href="index.html">← Portfolio</a><div class="nav-links"><a href="#overview">Overview</a><a href="#reverse">Reverse Engineering</a><a href="#redesign">Redesign</a><a href="#result">Result</a></div></nav>
+</header>
+<main>
+  <!-- EDITABLE COPY: PUMP HERO -->
+  <section class="case-hero pump-hero">
+    <div class="container">
+      <div class="eyebrow">CBU · Materials Course Project · Fall 2025</div>
+      <h1 class="case-title">External Gear Pump Reverse Engineering</h1>
+      <p class="case-subtitle">Our four-person team was given a small 12 V water pump, asked to reverse engineer it, recreate the plastic components with 3D printing, and reach at least 50% of the original flow performance. After researching the pump, we decided not to copy its unusual four-gear layout exactly and instead redesigned it into a more conventional two-gear pump.</p>
+      <img class="case-hero-photo pump-hero-photo" src="public/images/pump/pump-final.jpg" alt="Final 3D printed reverse engineered external gear water pump">
+
+      <div class="project-snapshot">
+        <div class="snapshot-grid">
+          <div class="snapshot-card">
+            <span class="snapshot-label">Assignment</span>
+            <strong>Measure, model, print, and test.</strong>
+            <p>Reverse engineer the supplied pump and produce a working 3D-printed replacement.</p>
+          </div>
+          <div class="snapshot-card">
+            <span class="snapshot-label">My work</span>
+            <strong>Measurement, SolidWorks, gear redesign.</strong>
+            <p>I measured the assembly with dial calipers, reconstructed the lower housing, researched external gear pumps, and modeled the new gears.</p>
+          </div>
+          <div class="snapshot-card">
+            <span class="snapshot-label">Main challenge</span>
+            <strong>Small clearances mattered.</strong>
+            <p>The project became a lesson in CAD interfaces, print tolerance, sealing, and how sensitive a pump is to leakage.</p>
+          </div>
+          <div class="snapshot-card">
+            <span class="snapshot-label">Result</span>
+            <strong>54.1% of original flow.</strong>
+            <p>The final printed pump produced 7.71 mL/s compared with 14.25 mL/s for the original, clearing the 50% project target.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat"><strong>14.25</strong><span>mL/s original flow</span></div>
+        <div class="stat"><strong>7.71</strong><span>mL/s rebuilt flow</span></div>
+        <div class="stat"><strong>54.1%</strong><span>of original flow rate</span></div>
+        <div class="stat"><strong>2</strong><span>gears in redesigned layout</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container case-layout">
+      <aside class="case-nav">
+        <strong>Case study</strong>
+        <a href="#overview">Project</a>
+        <a href="#reverse">Reverse engineering</a>
+        <a href="#redesign">Redesign</a>
+        <a href="#prototype">Prototype iteration</a>
+        <a href="#result">Testing &amp; result</a>
+      </aside>
+
+      <div class="case-content">
+        <!-- EDITABLE COPY: PUMP OVERVIEW -->
+        <section id="overview">
+          <div class="eyebrow">01 · The Project</div>
+          <h2>The assignment started as reverse engineering, but the original pump raised a design question.</h2>
+          <p>For a Materials course project, our team was given a small ZC-A210 12 V water pump. The original pump used four gears stacked in two pairs and moved water vertically through the gear arrangement, which is a rare arrangment. We were asked to measure the pump, recreate the geometry in CAD, manufacture the plastic components by 3D printing, and produce at least half of the original flow rate.</p>
+          <p>Before changing anything, we tested the stock pump so we had a baseline. Across ten trials it averaged 14.25 mL/s. That gave us a real number to compare against after rebuilding it.</p>
+
+          <div class="role-panel">
+            <div class="cad-companion-kicker">My contribution</div>
+            <div class="role-grid">
+              <div class="role-item"><strong>Research</strong><span>Studied how conventional external gear pumps move fluid and compared that with the unusual supplied layout</span></div>
+              <div class="role-item"><strong>Measurement</strong><span>Measured the assembly and small features using dial calipers after the FARO-arm approach proved poorly suited to the geometry</span></div>
+              <div class="role-item"><strong>CAD</strong><span>Reconstructed the lower half of the pump in SolidWorks and created the redesigned two-gear geometry</span></div>
+              <div class="role-item"><strong>Iteration</strong><span>Worked through multiple printed prototypes with the team until the separate CAD models fit and the pump actually moved water</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDITABLE COPY: PUMP REVERSE ENGINEERING -->
+        <section id="reverse">
+          <div class="eyebrow">02 · Reverse Engineering</div>
+          <h2>We were asked to use a FARO arm, but ended up relying on calipers for measurements.</h2>
+          <p>We disassembled the original pump and tried capturing the small parts with a FARO arm. The probe available to us was too large for several of the features, so the scan quality was not good enough to build the final CAD from directly. For the detailed reconstruction, I relied mainly on dial-caliper measurements and checked the interfaces repeatedly as I modeled the lower assembly in SolidWorks.</p>
+
+          <div class="media-grid-2 pump-reverse-grid">
+            <div class="media-tile contain"><img src="public/images/pump/pump-faro-scan.jpg" alt="FARO arm mesh scans of pump gear and housing"><div class="caption">FARO-arm mesh results. Useful as a reference, but not accurate enough for the small interfaces we needed.</div></div>
+            <div class="media-tile"><img src="public/images/pump/pump-original-housing.jpg" alt="Original injection molded gear pump housing"><div class="caption">Original injection-molded pump housing during disassembly and measurement.</div></div>
+          </div>
+
+          <div class="manufacturing-callout">
+            <div class="cad-companion-kicker">Lesson</div>
+            <strong>The most advanced measuring tool was not automatically the best one.</strong>
+            <p>For parts this small, a careful caliper measurement was more useful than a noisy mesh generated with the wrong FARO probe.</p>
+          </div>
+        </section>
+
+        <!-- EDITABLE COPY: PUMP REDESIGN -->
+        <section id="redesign">
+          <div class="eyebrow">03 · Redesign</div>
+          <h2>After researching gear pumps, switching to a conventional gear path was most likely to suceed.</h2>
+          <p>The supplied pump was unusual. It used four short gears stacked two-high, with the inlet and outlet arranged so the water moved vertically through the assembly. Most external gear pumps I found used two gears, carried fluid around the outside of the gear teeth, and discharged on the opposite side.</p>
+          <p>I proposed changing our version to that more conventional layout. I modeled two taller gears in SolidWorks, each replacing a pair of stacked original gears, while our team reworked the housing and moved the outlet to the opposite side of the gear chamber.</p>
+
+          <div class="decision-strip">
+            <div><strong>Original</strong><span>Four short gears stacked in two pairs</span></div>
+            <div><strong>Redesign</strong><span>Two taller gears with fluid carried around the outside</span></div>
+            <div><strong>Housing change</strong><span>Outlet moved to the opposite side of the chamber</span></div>
+          </div>
+
+          <div class="media-grid-2">
+            <div class="media-tile"><img src="public/images/pump/pump-gear-comparison.jpg" alt="Green redesigned gears next to original black pump gears"><div class="caption">Green two-gear prototypes compared with the original black gears.</div></div>
+            <div class="media-tile contain"><img src="public/images/pump/pump-housing-cad.jpg" alt="Fusion 360 CAD models of the redesigned gear pump housing and cap"><div class="caption">Team CAD for the revised housing and cap, developed alongside my SolidWorks parts.</div></div>
+          </div>
+        </section>
+
+        <!-- EDITABLE COPY: PUMP PROTOTYPING -->
+        <section id="prototype">
+          <div class="eyebrow">04 · Prototype Iteration</div>
+          <h2>Our first prints did not fit together well enough to pump anything.</h2>
+          <p>Different parts of the assembly were being modeled in SolidWorks and Fusion 360 by different team members. The first several prototypes exposed small interface mismatches that looked harmless in separate CAD files but became obvious once we tried to assemble the printed parts.</p>
+          <p>We printed multiple revisions, compared the physical interfaces, corrected dimensions, and eventually reached a version that sealed well enough to prime and pump water. Early prototypes were printed on my Bambu P1P, while the final parts were produced on a Bambu X1 Carbon in the CBU rapid-prototyping lab.</p>
+
+          <div class="media-grid-3 pump-prototype-grid">
+            <div class="media-tile"><img src="public/images/pump/pump-green-prototype.jpg" alt="Green early 3D printed gear pump prototype mounted to motor"><div class="caption">Early green prototype.</div></div>
+            <div class="media-tile"><img src="public/images/pump/pump-final-open.jpg" alt="Final printed external gear pump open to show two internal gears"><div class="caption">Final two-gear chamber before closing the housing.</div></div>
+            <div class="media-tile"><img src="public/images/pump/pump-final.jpg" alt="Final assembled 3D printed water pump"><div class="caption">Final assembled printed pump.</div></div>
+          </div>
+        </section>
+
+        <!-- EDITABLE COPY: PUMP RESULT -->
+        <section id="result">
+          <div class="eyebrow">05 · Testing &amp; Result</div>
+          <h2>Our reverse-engineered pump hit the target, but taught us some limitations of 3D printing.</h2>
+          <p>We repeated the same flow-rate test used on the stock pump. The reverse-engineered version averaged 7.71 mL/s, which was 54.1% of the original pump's 14.25 mL/s flow rate. The assignment targeted 50%, so the final prototype met the goal.</p>
+
+          <div class="pump-performance">
+            <div class="pump-performance-item"><span>Original pump</span><strong>14.25 mL/s</strong></div>
+            <div class="pump-performance-arrow">→</div>
+            <div class="pump-performance-item"><span>3D-printed redesign</span><strong>7.71 mL/s</strong></div>
+            <div class="pump-performance-badge"><strong>54.1%</strong><span>of original flow</span></div>
+          </div>
+
+          <p>My best explanation for the remaining difference was leakage. The original housing was injection molded and could hold much tighter, smoother sealing surfaces than our PLA parts. In a small pump that depends on creating suction, tiny clearances and surface imperfections matter a lot.</p>
+
+          <div class="outcome-grid">
+            <div class="outcome-box"><h3>What worked</h3><ul><li>Reconstructed the small pump geometry from physical measurements</li><li>Converted the four-gear layout into a conventional two-gear arrangement</li><li>Produced a working pump using 3D-printed PLA parts</li><li>Met the required 50% flow-performance target</li></ul></div>
+            <div class="outcome-box"><h3>What I learned</h3><ul><li>Tolerances and sealing dominate small pump performance</li><li>CAD interfaces need to be controlled when multiple people model mating parts</li><li>3D printing can reproduce function, but not every manufacturing characteristic of injection molding</li><li>Reverse engineering is as much about understanding function as copying dimensions</li></ul></div>
+          </div>
+
+          <div class="closing-note">
+            <strong>What I liked about this project</strong>
+            <p>It was a small project compared with ACE or the induction machine, but it was a good exercise in looking at an existing product, figuring out why it works, deciding what I would change, and then testing whether the redesigned version still performed.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container">External Gear Pump Reverse Engineering · Materials course project</div></footer>
+</body>
+</html>
